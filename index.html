@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khai Nguy - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid #e9ecef;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-content p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: #495057;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #495057;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #007bff;
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            padding: 3rem 0;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #007bff;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-item h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+        }
+
+        .education-details {
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        .coursework {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .course-tag {
+            background: #f8f9fa;
+            color: #495057;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid #e9ecef;
+        }
+
+        /* Experience & Projects */
+        .item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            margin-bottom: 1rem;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-subtitle {
+            color: #6c757d;
+            font-size: 1rem;
+        }
+
+        .item-duration {
+            color: #868e96;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: #007bff;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievements li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.2rem;
+            color: #495057;
+        }
+
+        .achievements li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            color: #495057;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 2rem 0;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Khai Nguy</h1>
+                <p>Software Development Engineer</p>
+                <div class="contact-info">
+                    <span>📞 604-606-2680</span>
+                    <span>✉️ khai.nguy@gmail.com</span>
+                    <span>🔗 LinkedIn Profile</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section id="education">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <div class="education-details">
+                        <strong>Purdue University</strong>, West Lafayette, IN<br>
+                        Class of December 2023 • GPA: 3.83
+                    </div>
+                    <div class="coursework">
+                        <span class="course-tag">Systems Programming</span>
+                        <span class="course-tag">Intro to Artificial Intelligence</span>
+                        <span class="course-tag">Analysis of Computer Algorithms</span>
+                        <span class="course-tag">Operating Systems</span>
+                        <span class="course-tag">Software Testing</span>
+                        <span class="course-tag">Relational Database Systems</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Software Development Engineer Intern</div>
+                        <div class="item-subtitle">Amazon, Seattle WA</div>
+                        <div class="item-duration">June 2024 - Present</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Designed and implemented an end-to-end solution to migrate the team's email notifications system to Amazon's federated architecture, enhancing team's ownership in deployment while supporting 10M+ notifications/day</li>
+                        <li>Collaborated with senior engineers and 3 cross-functional teams to define migration requirements</li>
+                        <li>Leveraged Amazon's internal deployment pipeline to automate integration testing, monitoring processes</li>
+                        <li>Delivered technical documentation adopted by 6 engineers to support onboarding and development</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Research Intern</div>
+                        <div class="item-subtitle">PurSec Lab, West Lafayette IN</div>
+                        <div class="item-duration">June 2023 - December 2023</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Developed and modified the Android Kernel to implement and test 3 new security frameworks</li>
+                        <li>Developed a custom fork of FlowDroid + FlowFinder + in Java, enhancing source and sink identifications for taint analysis and handling complex data flows</li>
+                        <li>Developed 2 mobile applications using Kotlin, analyzing 300+ data flows to identify potential security risks</li>
+                        <li>Explored and analyzed 10+ security vulnerabilities and threats within mobile systems, focusing on permission groups</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Information Technology Intern</div>
+                        <div class="item-subtitle">Jayner Education, New York City NY</div>
+                        <div class="item-duration">June 2022 - Aug 2022</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Led interactive sessions to teach computer science concepts to students aged 11-15, fostering a solid foundation in programming principles, data structures and algorithms</li>
+                        <li>Developed engaging coding projects using Python, Lua, Java and C++ to inspire student creativity, enhancing practical coding, and communication skills, resulting in a 26% improvement from average quality scores</li>
+                        <li>Provided 7 hours of lecture in a weekly basis, incorporating theoretical and practical components</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Software Engineer Intern</div>
+                        <div class="item-subtitle">Grant Thornton LLP, Ho Chi Minh Vietnam</div>
+                        <div class="item-duration">June 2021 - Aug 2021</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Developed and maintained applications and microservices using Node.js, React, and SQL</li>
+                        <li>Migrated 30+ GB of data from in-house servers to Microsoft Azure, enhancing data accessibility and security</li>
+                        <li>Collaborated with a team members to implement Oracle NetSuite and SAP Business One for 3 major clients, streamlining their business operations and reducing manual data entry by 30%</li>
+                        <li>Conducted A/B testing on different versions of the implementation, increasing 15% in client engagement</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2 class="section-title">Projects</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">SigniFy: ASL to English Converter</div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">OpenAI API</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Developed a web application to convert American Sign Language (ASL) to English text</li>
+                        <li>Implemented backend using FastAPI and Python, integrating custom-trained model for ASL detection</li>
+                        <li>Deployed application on Amazon Web Services (AWS) EC2 instance to ensure scalability and accessibility</li>
+                        <li>Utilized OpenAI API to convert detected ASL phrases into grammatically correct English sentences</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">BillBoard: AI-Powered Legislative Transparency Platform</div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">pgvector</span>
+                        <span class="tech-tag">Llama</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Led full-stack development of a LLM-powered platform that provide digestible summaries of congressional bills</li>
+                        <li>Utilized PostgreSQL and pgvector for storing vector embeddings to enable bill searching and personalization</li>
+                        <li>Managed backend infrastructure using Docker to ensure consistent deployment and scalability</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skill-list">
+                            Java, Python, C/C++, SQL, Lua, JavaScript, TypeScript, HTML/CSS, PHP, Golang, Rust, Kotlin
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Frameworks</h3>
+                        <div class="skill-list">
+                            React, React Native, Svelte, Next.js, Node.js, Nginx, Express, YARN, Kafka, Firebase, Django
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Developer Tools</h3>
+                        <div class="skill-list">
+                            Git, Docker, AWS, Google Cloud Platform, VS Code, Neovim, Linux, SQLite, PostgreSQL, JUnit
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Libraries</h3>
+                        <div class="skill-list">
+                            pandas, NumPy, Matplotlib, TensorFlow, scikit-learn, PyTorch, Voyager
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Khai Nguy. Clean, simple, effective.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
